@@ -1,0 +1,197 @@
+{
+	"info": {
+		"_postman_id": "1d504bda-55a7-40f1-aaaf-e78bbb375efc",
+		"name": "WeatherAPICollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7907757"
+	},
+	"item": [
+		{
+			"name": "Request-1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.sendRequest(\"https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6 907d289e10d714a6e88b30761fae22\", function (err, response) {\r",
+							"    console.log(response.json());\r",
+							"    pm.expect(response.json().coord.lat).to.eql(51.51);\r",
+							"    pm.expect(response.json().coord.lon).to.eql(-0.13);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6 907d289e10d714a6e88b30761fae22",
+					"protocol": "https",
+					"host": [
+						"samples",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "London,uk"
+						},
+						{
+							"key": "appid",
+							"value": "b6 907d289e10d714a6e88b30761fae22"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request-2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.sendRequest(\"http://samples.openweathermap.org/data/2.5/weather?zip=94040,us&appid=b1b15e88fa797225412429c1c50c122a1\", function (err, response) {\r",
+							"    console.log(response.json());\r",
+							"    pm.expect(response.json().coord.lat).to.eql(37.39);\r",
+							"    pm.expect(response.json().coord.lon).to.eql(-122.09);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://samples.openweathermap.org/data/2.5/weather?zip=94040,us&appid=b1b15e88fa797225412429c1c50c122a1",
+					"protocol": "http",
+					"host": [
+						"samples",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "zip",
+							"value": "94040,us"
+						},
+						{
+							"key": "appid",
+							"value": "b1b15e88fa797225412429c1c50c122a1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request-3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.sendRequest(\"http://samples.openweathermap.org/data/2.5/weather?zip=84043,India&appid=b1b15e88fa797225412429c1c50c122a1\", function (err, response) {\r",
+							"    console.log(response.json());\r",
+							"    pm.expect(response.json().coord.lat).to.eql(37.39);\r",
+							"    pm.expect(response.json().coord.lon).to.eql(-122.09);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://samples.openweathermap.org/data/2.5/weather?zip=84043,India&appid=b1b15e88fa797225412429c1c50c122a1",
+					"protocol": "http",
+					"host": [
+						"samples",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "zip",
+							"value": "84043,India"
+						},
+						{
+							"key": "appid",
+							"value": "b1b15e88fa797225412429c1c50c122a1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request-4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.sendRequest(\"http://samples.openweathermap.org/data/2.5/weather?zip=94040,us\", function (err, response) {\r",
+							"    console.log(response.json());\r",
+							"    pm.expect(response.json().message).to.eql('Invalid API key. Please see http://openweathermap.org/faq#error401 for more info.');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://samples.openweathermap.org/data/2.5/weather?zip=94040,us",
+					"protocol": "http",
+					"host": [
+						"samples",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "zip",
+							"value": "94040,us"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
